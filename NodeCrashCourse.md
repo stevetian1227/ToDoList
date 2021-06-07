@@ -55,6 +55,47 @@ if(fs.existsSync('location of file'){
 }
 ```
 
-## note that all these functions take time to trigger which means the functions after them may run before the callback funciton in them
+ note that all these functions take time to trigger which means the functions after them may run before the callback funciton in them
+
+
+## Streams
+
+### read data before fully load
+
+```javascript
+const readStream = fs.createReadStream('location of file');
+
+readStream.on('data',(chunk) =>{
+  console.log('--------');
+  console.log(chunk);
+}
+```
+> Here data is an event which means everytime user receive data from the file, the callback function runs. And chunk here is a buffer.
+
+```javascript
+const readStream = fs.createReadStream('location of file', {encoding: 'utf8'});
+
+readStream.on('data',(chunk) =>{
+  console.log('--------');
+  console.log(chunk);
+}
+```
+> Or we can add encoding to change the buffer into readable strings
+
+### writeStream
+```javascript
+const readStream = fs.createReadStream('location of file', {encoding: 'utf8'});
+const writeStream = fs.createWriteStream('location of the file');
+
+readStream.on('data',(chunk) =>{
+  console.log('----New Chunk----');
+  console.log(chunk);
+  writeStream.write('what want to be write');
+}
+```
+> If file not exist then will be created.
+
+
+
 
 
