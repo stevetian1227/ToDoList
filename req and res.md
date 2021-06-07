@@ -114,3 +114,16 @@ server.listen(3000,'localhost',() =>{
 })
 ```
 
+## Status code
+* 200-OK
+* 301-Resourse moved
+* 404-Not found
+* 500-Internal Server error
+
+## Status code range
+* 100 range - Informational response
+* 200 range - Success code
+* 300 range - codes for redirects
+* 400 range - user or client error codes
+* 500 range - server error codes
+
