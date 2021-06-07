@@ -1,2 +1,60 @@
-### fs module in node
-# read file
+# fs module in node
+
+## read files
+```javascript
+fs.readFile('location of file',() => {
+  if(err){
+    console.log(err);
+  }
+  console.log(data.toString());
+});
+```
+
+## write files
+```javascript
+fs.writeFile('path of the file', 'text to be written', () => {
+  console.log('Finish written')
+})
+```
+
+## directories
+```javascript
+fs.mkdir('location of the directory',(err) => {
+  if(err){
+    console.log(err);
+  }
+  console.log('folder created')
+});
+```
+> if already exist then err occur
+
+```javascript
+if (!fs.existsSync('location of the path')
+```
+> use this funciton to check if exists
+
+```javascript
+fs.rmdir('location of the directory', (err) => {
+  if(err){
+    console.log(err)
+  }
+  console.log('removed');
+});
+```
+> use this to remove dir
+
+## deleting files
+```javascript
+if(fs.existsSync('location of file'){
+  fs.unlink('location of file',() => {
+    if(err){
+      console.log(err);
+    }
+    console.log('file deleted');
+  })
+}
+```
+
+## note that all these functions take time to trigger which means the functions after them may run before the callback funciton in them
+
+
