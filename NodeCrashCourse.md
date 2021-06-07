@@ -95,7 +95,15 @@ readStream.on('data',(chunk) =>{
 ```
 > If file not exist then will be created.
 
+### Passing readable string to writable string using pipe
+```javascript
+const readStream = fs.createReadStream('location of file', {encoding: 'utf8'});
+const writeStream = fs.createWriteStream('location of the file');
 
+readStream.pipe(writeStream);
+```
+
+> This works the same as the previous one which means when read the stream then write stream to a file.
 
 
 
