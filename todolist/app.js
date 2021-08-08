@@ -28,6 +28,8 @@ app.get('/', (req, res) =>{
     res.render('list',{dayType: day, taskList:taskList});
 });
 
+
+
 app.post('/', (req, res) =>{
     taskList[taskList.length] = req.body.newTask;
 
