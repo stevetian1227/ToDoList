@@ -10,6 +10,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static('public'));
 
 var taskList = ["Task1","Task2","Task3"];
+var workList = [];
 
 
 app.get('/', (req, res) =>{
