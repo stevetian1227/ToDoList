@@ -32,7 +32,11 @@ app.get('/', (req, res) =>{
 
 
 app.post('/', (req, res) =>{
-    taskList[taskList.length] = req.body.newTask;
+    if(req.body.list===" "){
+        req.body.newTask;
+
+    }
+
 
     res.redirect("/");
 })
